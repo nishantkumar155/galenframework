@@ -1,0 +1,35 @@
+this.LoginPage = function (driver) {
+  GalenPages.extendPage(this, driver, {
+    //email: "id: edit-name--2", // css locator
+    //password: "id: edit-pass--2", // xpath locator
+    //submitButton: "id: edit-submit--2", // id locator
+    menuTest: "id: menu-1314-1",
+    menuOpen:"id:testid"
+
+    load: function () {
+      this.open("mysite");
+      return this.waitForIt();
+    },
+    //loginAs: function (userName, password) {
+    //  this.email.typeText(userName);
+    //  this.password.typeText(password);
+    //  this.submitButton.click();
+    //},
+    
+    
+     hoverAs: function () {
+      //this.menuTest.click();
+      this.menuTest.hover(menuOpen);
+    }
+
+
+  });
+};
+// now you can use it like this
+var loginPage = new LoginPage(driver).load();
+// loginPage.hoverAs();
+loginPage.hoverAs();
+
+// loginPage.loginAs("testuser@example.com", "password");
+
+
